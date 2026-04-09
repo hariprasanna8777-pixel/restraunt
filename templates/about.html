@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set title = "About" %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1 class="fw-semibold mb-3">Our Story</h1>
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <p class="text-muted">
+          We’re a small team obsessed with doing the basics well: good bread, real sauces, properly seasoned food.
+          You know, shocking standards.
+        </p>
+        <p class="text-muted mb-0">
+          Use this page for your brand story, chef profile, and what makes your place different.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <div class="p-4 bg-light rounded-4">
+          <div class="fw-semibold">Details</div>
+          <div class="text-muted small mt-2">
+            • Locally sourced ingredients<br>
+            • Vegetarian options<br>
+            • Catering available
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

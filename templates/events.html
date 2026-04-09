@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% set title = "Events" %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1 class="fw-semibold mb-2">Events</h1>
+    <p class="text-muted mb-4">Food tastes better when there’s something happening.</p>
+
+    <div class="row g-3">
+      {% for e in events_list %}
+      <div class="col-md-6">
+        <div class="p-4 border rounded-4 h-100">
+          <div class="small text-uppercase letterspace text-muted">{{ e.date }}</div>
+          <h3 class="fw-semibold mt-1">{{ e.title }}</h3>
+          <p class="text-muted mb-0">{{ e.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

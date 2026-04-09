@@ -1,0 +1,44 @@
+:root{
+    --radius: 1.25rem;
+  }
+  
+  .letterspace { letter-spacing: .18em; }
+  
+  .hero{
+    position: relative;
+    min-height: 62vh;
+    display: grid;
+    place-items: center;
+    background: url("../img/hero.jpg") center/cover no-repeat;
+  }
+  
+  .hero-overlay{
+    position:absolute; inset:0;
+    background: rgba(255,255,255,.65);
+  }
+  
+  .hero-inner{
+    position: relative;
+    padding: 5rem 0;
+  }
+  
+  .maxw{ max-width: 42rem; }
+  
+  .grid-photos{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+  }
+  
+  .grid-photos img{
+    width:100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  
+  .grid-photos img:nth-child(1){
+    grid-column: 1 / 3;
+    height: 260px;
+  }
+  

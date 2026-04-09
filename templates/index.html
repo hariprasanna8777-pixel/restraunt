@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% set title = "Home" %}
+
+{% block content %}
+<header class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container hero-inner">
+    <p class="text-uppercase small letterspace mb-2">Restaurant Opening</p>
+    <h1 class="display-5 fw-semibold mb-3">Fresh food, clean design, zero excuses.</h1>
+    <p class="lead text-muted mb-4 maxw">
+      A modern spot for comfort classics and seasonal plates. Come hungry. Leave dramatically happier.
+    </p>
+    <div class="d-flex gap-2 flex-wrap">
+      <a class="btn btn-dark rounded-pill px-4" href="{{ url_for('menu') }}">View Menu</a>
+      <a class="btn btn-outline-dark rounded-pill px-4" href="{{ url_for('reservations') }}">Reserve a Table</a>
+    </div>
+  </div>
+</header>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h2 class="fw-semibold mb-3">Made with love. Simply delicious.</h2>
+        <p class="text-muted">
+          We keep it simple: great ingredients, solid technique, and vibes that don’t try too hard.
+        </p>
+        <ul class="text-muted">
+          <li>Seasonal menu</li>
+          <li>Weekend events</li>
+          <li>Takeaway friendly</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <div class="grid-photos">
+          <img src="{{ url_for('static', filename='img/dish1.jpg') }}" alt="dish photo">
+          <img src="{{ url_for('static', filename='img/dish2.jpg') }}" alt="dish photo">
+          <img src="{{ url_for('static', filename='img/dish3.jpg') }}" alt="dish photo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
+      <h2 class="fw-semibold mb-0">Featured</h2>
+      <a class="link-dark" href="{{ url_for('menu') }}">Full menu →</a>
+    </div>
+
+    <div class="row g-3">
+      {% for item in featured %}
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm rounded-4">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title mb-1">{{ item.name }}</h5>
+              <span class="badge text-bg-dark rounded-pill">{{ item.price }}</span>
+            </div>
+            <p class="text-muted mb-0">{{ item.desc }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="p-4 border rounded-4 h-100">
+          <h3 class="fw-semibold">Hours</h3>
+          <div class="text-muted">
+            Mon–Thu: 12pm–10pm<br>
+            Fri–Sun: 12pm–12am
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-4 border rounded-4 h-100">
+          <h3 class="fw-semibold">Visit</h3>
+          <div class="text-muted">
+            12 Example Street, Your City<br>
+            +91 98765 43210
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
